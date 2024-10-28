@@ -95,7 +95,7 @@ void loop() {
 
   // Detect from laser sensor
   else if (currentCommand == 3) {
-    bool detected = digitalRead(sensor);
+    bool detected = digitalRead(laserReceiverPin);
     sendResponse(String(detected));
     currentCommand = -1;
   }
@@ -115,7 +115,7 @@ void loop() {
   // Detect from proximity sensor
   else if (currentCommand == 6) {
     bool detected = digitalRead(proximitySensorPin);
-    sendResponse(String(detected));
+    sendResponse(String(!detected));
     currentCommand = -1;
   }
 
