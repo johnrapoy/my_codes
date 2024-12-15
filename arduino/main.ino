@@ -4,21 +4,21 @@
 const int stepperPulsePin = 2;
 const int stepperDirPin = 3;
 const int stepperEnaPin = 4;
-const int irSensorBottlePin = 4;
-const int laserTransmitterPin1 = 5;
-const int laserReceiverPin1 = 6;
-const int laserTransmitterPin2 = 7;
-const int laserReceiverPin2 = 8;
-const int laserTransmitterPin3 = 9;
-const int laserReceiverPin3 = 10;
-const int heightServoPin = 11;
-const int proximitySensorPin = 12;
+const int irSensorBottlePin = 5;
+const int laserTransmitterPin1 = 6;
+const int laserReceiverPin1 = 7;
+const int laserTransmitterPin2 = 8;
+const int laserReceiverPin2 = 9;
+const int laserTransmitterPin3 = 10;
+const int laserReceiverPin3 = 11;
+const int heightServoPin = 12;
+const int proximitySensorPin = 13;
 const int irSensorFillingPin = 14;
-const int fillingServoPin = 11;
+const int fillingServoPin = 15;
 const int pneumaticRelay = 16;
 const int loadcellDoutPin = 17;
 const int loadcellSckPin = 18;
-
+const int irSensorCappingPin = 19;
 
 const int ledPin = 4;
 const int buzzerPin = 5;
@@ -42,7 +42,6 @@ void setup() {
 
   // Bottle Detection
   pinMode(irSensorBottlePin, INPUT);
-}
 
   // Height sensor
   pinMode(laserTransmitterPin1, OUTPUT);
@@ -74,6 +73,11 @@ void setup() {
     }
   }
 
+    // Capping
+  pinMode(irSensorCappingPin, INPUT);
+  }
+
+
 void loop() {
   if (currentCommand == -1) {
     receiveCommand();
@@ -97,12 +101,16 @@ void loop() {
     currentCommand = -1;
   }
 
-  // Bottle Detected
-  else if 
+  // Detect from IR Sensor
+  else if (currentCommand == 3) {
+    bool detected = digitalRead(irSensorBottlePin);
+    sendResponse(String(detected));
+    currentCommand = -1;
+  } 
 
   
 // Detect height based on laser sensors
-if (currentCommand == 3) {
+if (currentCommand == 4) {
   bool value1 = digitalRead(laserReceiverPin1); 
   bool value2 = digitalRead(laserReceiverPin2); 
   bool value3 = digitalRead(laserReceiverPin3); 
@@ -123,83 +131,52 @@ if (currentCommand == 3) {
 }
 
   // Turn on servo motor
-  else if (currentCommand == 4) {
+  else if (currentCommand == 5) {
     heightServo.write(180);
     currentCommand = -1;
   }
 
   // Turn off servo motor
-  else if (currentCommand == 5) {
+  else if (currentCommand == 6) {
     heightServo.write(0);
     currentCommand = -1;
   }
 
   // Detect from proximity sensor
-  else if (currentCommand == 6) {
+  else if (currentCommand == 7) {
     bool detected = digitalRead(proximitySensorPin);
     sendResponse(String(!detected));
     currentCommand = -1;
   }
 
   // Detect from IR sensor
-  else if (currentCommand == 9) {
+  else if (currentCommand == 8) {
     bool detected = digitalRead(irSensorFillingPin);
     sendResponse(String(detected));
     currentCommand = -1;
   }
 
-  // Turn on shredder
-  else if (currentCommand == 10) {
-    digitalWrite(shredderRelay, HIGH);
-    currentCommand = -1;
-  }
-
-  // Turn off shredder
-  else if (currentCommand == 11) {
-    digitalWrite(shredderRelay, LOW);
-    currentCommand = -1;
-  }
-
   // Turn on pneumatic actuator
-  else if (currentCommand == 12) {
+  else if (currentCommand == 9) {
     digitalWrite(pneumaticRelay, HIGH);
     currentCommand = -1;
   }
 
   // Turn off pneumatic actuator
-  else if (currentCommand == 13) {
+  else if (currentCommand == 10) {
     digitalWrite(pneumaticRelay, LOW);
     currentCommand = -1;
   }
 
   // Get weight
-  else if (currentCommand == 14) {
+  else if (currentCommand == 11) {
     sendResponse(String((scale.get_units(), 1)));
     currentCommand = -1;
   }
 
   // Detect from IR sensor
-  else if (currentCommand == 15) {
+  else if (currentCommand == 12) {
     bool detected = digitalRead(irSensorCappingPin);
-    sendResponse(String(detected));
-    currentCommand = -1;
-  }
-
-  // Turn on capping relay
-  else if (currentCommand == 16) {
-    digitalWrite(cappingRelay, HIGH);
-    currentCommand = -1;
-  }
-
-  // Turn off capping relay
-  else if (currentCommand == 17) {
-    digitalWrite(cappingRelay, LOW);
-    currentCommand = -1;
-  }
-
-  // Detect from IR sensor
-  else if (currentCommand == 18) {
-    bool detected = digitalRead(irSensorRejectedPin);
     sendResponse(String(detected));
     currentCommand = -1;
   }
