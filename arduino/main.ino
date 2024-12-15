@@ -3,20 +3,24 @@
 
 const int stepperPulsePin = 2;
 const int stepperDirPin = 3;
-const int stepperEnaPin = 4; 
-const int laserTransmitterPin = 5;
-const int laserReceiverPin = 6;
-const int heightServoPin = 7;
-const int proximitySensorPin = 8;
-const int rejectServoPin = 9;
-const int irSensorFillingPin = 10;
-const int shredderRelay = 11;
-const int pneumaticRelay = 11;
-const int loadcellDoutPin = 12;
-const int loadcellSckPin = 13;
-const int irSensorCappingPin = 14;
-const int cappingRelay = 15;
-const int irSensorRejectedPin = 16;
+const int stepperEnaPin = 4;
+const int laserTransmitterPin1 = 5;
+const int laserReceiverPin1 = 6;
+const int laserTransmitterPin2 = 7;
+const int laserReceiverPin2 = 8;
+const int laserTransmitterPin3 = 9;
+const int laserReceiverPin3 = 10;
+const int heightServoPin = 11;
+const int proximitySensorPin = 12;
+const int rejectServoPin = 13;
+const int irSensorFillingPin = 14;
+const int shredderRelay = 15;
+const int pneumaticRelay = 16;
+const int loadcellDoutPin = 17;
+const int loadcellSckPin = 18;
+const int irSensorCappingPin = 19;
+const int cappingRelay = 20;
+const int irSensorRejectedPin = 21;
 
 
 const int ledPin = 4;
@@ -40,9 +44,15 @@ void setup() {
   pinMode(stepperEnaPin, OUTPUT);
 
   // Height sensor
-  pinMode(laserTransmitterPin, OUTPUT);
-  pinMode(laserReceiverPin, INPUT);
-  digitalWrite(laserTransmitterPin, HIGH);
+  pinMode(laserTransmitterPin1, OUTPUT);
+  pinMode(laserReceiverPin1, INPUT);
+  pinMode(laserTransmitterPin2, OUTPUT);
+  pinMode(laserReceiverPin2, INPUT);
+  pinMode(laserTransmitterPin3, OUTPUT);
+  pinMode(laserReceiverPin3, INPUT);
+  digitalWrite(laserTransmitterPin1, HIGH);
+   digitalWrite(laserTransmitterPin2, HIGH);
+   digitalWrite(laserTransmitterPin3, HIGH);
   heightServo.attach(heightServoPin);
 
   // Plastic or can sensor
@@ -93,12 +103,26 @@ void loop() {
     currentCommand = -1;
   }
 
-  // Detect from laser sensor
-  else if (currentCommand == 3) {
-    bool detected = digitalRead(laserReceiverPin);
-    sendResponse(String(detected));
-    currentCommand = -1;
+// Detect height based on laser sensors
+if (currentCommand == 3) {
+  bool value1 = digitalRead(laserReceiverPin1); 
+  bool value2 = digitalRead(laserReceiverPin2); 
+  bool value3 = digitalRead(laserReceiverPin3); 
+
+  String response;
+  if (value1 == LOW && value2 == HIGH && value3 == HIGH) {
+    response = "Height: Low - Laser 1 detects object";
+  } else if (value1 == LOW && value2 == LOW && value3 == HIGH) {
+    response = "Height: Medium - Laser 1 and 2 detect object";
+  } else if (value1 == LOW && value2 == LOW && value3 == LOW) {
+    response = "Height: High - Laser 1, 2, and 3 detect object";
+  } else {
+    response = "No valid height detected";
   }
+
+  sendResponse(response);
+  currentCommand = -1; 
+}
 
   // Turn on servo motor
   else if (currentCommand == 4) {
