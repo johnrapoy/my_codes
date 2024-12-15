@@ -116,12 +116,22 @@ class Machine:
         Send `moveConveyorEnd` command to arduino
         """
         self.send_command(2)
+        
+    def detect_bottle_ir_sensor(self) -> bool:
+        """
+        Detect from capping IR sensor
+        """
+        self.send_command(3)
+        response = self.get_arduino_response()
+        while not response:
+            response = self.get_arduino_response()
+        return bool(response)
 
     def detect_laser_sensor(self) -> bool:
         """
         Detect from laser sensor on arduino
         """
-        self.send_command(3)
+        self.send_command(4)
         response = self.get_arduino_response()
         while not response:
             response = self.get_arduino_response()
@@ -131,75 +141,63 @@ class Machine:
         """
         Open the height servo motor
         """
-        self.send_command(4)
+        self.send_command(5)
 
     def close_height_servo(self):
         """
         Close the height servo motor
         """
-        self.send_command(5)
+        self.send_command(6)
 
     def detect_proximity_sensor(self) -> bool:
         """
         Detect from proximity sensor
         """
-        self.send_command(6)
+        self.send_command(7)
         response = self.get_arduino_response()
         while not response:
             response = self.get_arduino_response()
         return bool(response)
-
-    def open_reject_servo(self):
-        """
-        Open the reject servo motor
-        """
-        self.send_command(7)
-
-    def close_reject_servo(self):
-        """
-        Close the reject servo motor
-        """
-        self.send_command(8)
 
     def detect_filling_ir_sensor(self) -> bool:
         """
         Detect from filling IR sensor
         """
-        self.send_command(9)
+        self.send_command(8)
         response = self.get_arduino_response()
         while not response:
             response = self.get_arduino_response()
         return bool(response)
-    
-    def turn_on_shredder(self):
+
+    def open_filling_servo(self):
         """
-        Turn on shredder relay
+        Open the height servo motor
+        """
+        self.send_command(9)
+
+    def close_filling_servo(self):
+        """
+        Close the height servo motor
         """
         self.send_command(10)
-
-    def turn_off_shredder(self):
-        """
-        Turn off shredder relay
-        """
-        self.send_command(11)
 
     def turn_on_pneumatic_actuator(self):
         """
         Turn on pneumatic actuator
         """
-        self.send_command(12)
+        self.send_command(11)
 
     def turn_off_pneumatic_actuator(self):
         """
         Turn off pneumatic actuator
         """
-        self.send_command(13)
+        self.send_command(12)
 
     def get_weight(self) -> bool:
         """
         Get weight from load cell on arduino
         """
-        self.send_command(14)
+        self.send_command(13)
         response = self.get_arduino_response()
         while not response:
             response = self.get_arduino_response()
@@ -209,29 +207,7 @@ class Machine:
         """
         Detect from capping IR sensor
         """
-        self.send_command(15)
-        response = self.get_arduino_response()
-        while not response:
-            response = self.get_arduino_response()
-        return bool(response)
-
-    def turn_on_capping_relay(self):
-        """
-        Turn on capping relay
-        """
-        self.send_command(16)
-
-    def turn_off_capping_relay(self):
-        """
-        Turn off capping relay
-        """
-        self.send_command(17)
-
-    def detect_reject_ir_sensor(self) -> bool:
-        """
-        Detect from reject IR sensor
-        """
-        self.send_command(18)
+        self.send_command(14)
         response = self.get_arduino_response()
         while not response:
             response = self.get_arduino_response()
