@@ -4,6 +4,7 @@
 const int stepperPulsePin = 2;
 const int stepperDirPin = 3;
 const int stepperEnaPin = 4;
+const int irSensorBottlePin = 4;
 const int laserTransmitterPin1 = 5;
 const int laserReceiverPin1 = 6;
 const int laserTransmitterPin2 = 7;
@@ -12,15 +13,11 @@ const int laserTransmitterPin3 = 9;
 const int laserReceiverPin3 = 10;
 const int heightServoPin = 11;
 const int proximitySensorPin = 12;
-const int rejectServoPin = 13;
 const int irSensorFillingPin = 14;
-const int shredderRelay = 15;
+const int fillingServoPin = 11;
 const int pneumaticRelay = 16;
 const int loadcellDoutPin = 17;
 const int loadcellSckPin = 18;
-const int irSensorCappingPin = 19;
-const int cappingRelay = 20;
-const int irSensorRejectedPin = 21;
 
 
 const int ledPin = 4;
@@ -43,6 +40,10 @@ void setup() {
   pinMode(stepperDirPin, OUTPUT);
   pinMode(stepperEnaPin, OUTPUT);
 
+  // Bottle Detection
+  pinMode(irSensorBottlePin, INPUT);
+}
+
   // Height sensor
   pinMode(laserTransmitterPin1, OUTPUT);
   pinMode(laserReceiverPin1, INPUT);
@@ -57,12 +58,13 @@ void setup() {
 
   // Plastic or can sensor
   pinMode(proximitySensorPin, INPUT);
-  rejectServo.attach(rejectServoPin);
+  heightServo.attach(heightServoPin);
 
   // Filling
   pinMode(irSensorFillingPin, INPUT);
   pinMode(shredderRelay, OUTPUT);
   pinMode(pneumaticRelay, OUTPUT);
+  fillingServoPin.attach(fillingServoPin);
   scale.begin(loadcellDoutPin, loadcellSckPin);
   scale.set_scale(calibrationFactor);
   scale.tare();
@@ -71,14 +73,6 @@ void setup() {
       break;
     }
   }
-
-  // Capping
-  pinMode(irSensorCappingPin, INPUT);
-  pinMode(cappingRelay, OUTPUT);
-
-  // Rejected container
-  pinMode(irSensorRejectedPin, INPUT);
-}
 
 void loop() {
   if (currentCommand == -1) {
@@ -103,6 +97,10 @@ void loop() {
     currentCommand = -1;
   }
 
+  // Bottle Detected
+  else if 
+
+  
 // Detect height based on laser sensors
 if (currentCommand == 3) {
   bool value1 = digitalRead(laserReceiverPin1); 
@@ -140,18 +138,6 @@ if (currentCommand == 3) {
   else if (currentCommand == 6) {
     bool detected = digitalRead(proximitySensorPin);
     sendResponse(String(!detected));
-    currentCommand = -1;
-  }
-
-  // Turn on servo motor
-  else if (currentCommand == 7) {
-    rejectServo.write(180);
-    currentCommand = -1;
-  }
-
-  // Turn off servo motor
-  else if (currentCommand == 8) {
-    rejectServo.write(0);
     currentCommand = -1;
   }
 
