@@ -25,6 +25,7 @@ const int buzzerPin = 5;
 
 
 
+Servo fillingServo;
 Servo heightServo;
 Servo rejectServo;
 HX711 scale;
@@ -57,17 +58,18 @@ void setup() {
 
   // Plastic or can sensor
   pinMode(proximitySensorPin, INPUT);
-  heightServo.attach(heightServoPin);
+  heightServo.write(180);
+
+  fillingServo.write(0);
 
   // Filling
   pinMode(irSensorFillingPin, INPUT);
-  pinMode(shredderRelay, OUTPUT);
   pinMode(pneumaticRelay, OUTPUT);
-  fillingServoPin.attach(fillingServoPin);
+  fillingServo.attach(fillingServoPin);
   scale.begin(loadcellDoutPin, loadcellSckPin);
   scale.set_scale(calibrationFactor);
   scale.tare();
-  while (True){
+  while (true){
     if (scale.is_ready()) {
       break;
     }
@@ -89,93 +91,105 @@ void loop() {
     currentCommand = -1;
   }
 
-  // Move conveyor mid
+  // Move conveyor reject
   else if (currentCommand == 1) {
+    moveConveyorReject();
+    currentCommand = -1;
+  }
+
+  // Move conveyor mid
+  else if (currentCommand == 2) {
     moveConveyorMid();
     currentCommand = -1;
   }
 
   // Move conveyor ending
-  else if (currentCommand == 2) {
+  else if (currentCommand == 3) {
     moveConveyorEnd();
     currentCommand = -1;
   }
 
   // Detect from IR Sensor
-  else if (currentCommand == 3) {
+  else if (currentCommand == 4) {
     bool detected = digitalRead(irSensorBottlePin);
-    sendResponse(String(detected));
+    sendResponse(String(!detected));
     currentCommand = -1;
   } 
 
   
 // Detect height based on laser sensors
-if (currentCommand == 4) {
-  bool value1 = digitalRead(laserReceiverPin1); 
-  bool value2 = digitalRead(laserReceiverPin2); 
-  bool value3 = digitalRead(laserReceiverPin3); 
-
-  String response;
-  if (value1 == LOW && value2 == HIGH && value3 == HIGH) {
-    response = "Height: Low - Laser 1 detects object";
-  } else if (value1 == LOW && value2 == LOW && value3 == HIGH) {
-    response = "Height: Medium - Laser 1 and 2 detect object";
-  } else if (value1 == LOW && value2 == LOW && value3 == LOW) {
-    response = "Height: High - Laser 1, 2, and 3 detect object";
-  } else {
-    response = "No valid height detected";
+if (currentCommand == 5) {
+  bool value1 = digitalRead(laserReceiverPin1);
+  bool value2 = digitalRead(laserReceiverPin2);
+  bool value3 = digitalRead(laserReceiverPin3);
+  bool response = false;
+  if (value1 && value2 && !value3) {
+    response = true;
   }
 
-  sendResponse(response);
+  sendResponse(String(response));
   currentCommand = -1; 
 }
 
-  // Turn on servo motor
-  else if (currentCommand == 5) {
+  // Turn off servo motor
+  else if (currentCommand == 6) {
     heightServo.write(180);
     currentCommand = -1;
   }
 
-  // Turn off servo motor
-  else if (currentCommand == 6) {
+  // Turn on servo motor
+  else if (currentCommand == 7) {
     heightServo.write(0);
     currentCommand = -1;
   }
 
   // Detect from proximity sensor
-  else if (currentCommand == 7) {
+  else if (currentCommand == 😎 {
     bool detected = digitalRead(proximitySensorPin);
     sendResponse(String(!detected));
     currentCommand = -1;
   }
 
   // Detect from IR sensor
-  else if (currentCommand == 8) {
-    bool detected = digitalRead(irSensorFillingPin);
-    sendResponse(String(detected));
+  else if (currentCommand == 9) {
+    bool detected = digitalRead(irSensorBottlePin);
+    sendResponse(String(!detected));
     currentCommand = -1;
   }
 
+    // Turn on servo motor
+  else if (currentCommand == 10) {
+    fillingServo.write(180);
+    currentCommand = -1;
+  }
+
+  // Turn off servo motor
+  else if (currentCommand == 11) {
+    fillingServo.write(0);
+    currentCommand = -1;
+  }
+
+
   // Turn on pneumatic actuator
-  else if (currentCommand == 9) {
+  else if (currentCommand == 12) {
     digitalWrite(pneumaticRelay, HIGH);
     currentCommand = -1;
   }
 
   // Turn off pneumatic actuator
-  else if (currentCommand == 10) {
+  else if (currentCommand == 13) {
     digitalWrite(pneumaticRelay, LOW);
     currentCommand = -1;
   }
 
   // Get weight
-  else if (currentCommand == 11) {
+  else if (currentCommand == 14) {
     sendResponse(String((scale.get_units(), 1)));
     currentCommand = -1;
   }
 
   // Detect from IR sensor
-  else if (currentCommand == 12) {
+  else if (currentCommand == 15) {
     bool detected = digitalRead(irSensorCappingPin);
     sendResponse(String(detected));
     currentCommand = -1;
@@ -195,7 +209,23 @@ void sendResponse(String response) {
 }
 
 void moveConveyorStart() {
-  for (int i=0; i<5000; i++) {
+  long signed iterations = 35000;
+  long signed i = 0;
+  for (i=0; i<iterations; i++) {
+    digitalWrite(stepperDirPin,LOW);
+    digitalWrite(stepperEnaPin,HIGH);
+    digitalWrite(stepperPulsePin,HIGH);
+    delayMicroseconds(50);
+    digitalWrite(stepperPulsePin,LOW);
+    delayMicroseconds(50);
+  }
+  sendResponse("done");
+}
+
+void moveConveyorReject() {
+  long signed iterations = 5000;
+  long signed i = 0;
+  for (i=0; i<iterations; i++) {
     digitalWrite(stepperDirPin,LOW);
     digitalWrite(stepperEnaPin,HIGH);
     digitalWrite(stepperPulsePin,HIGH);
@@ -207,7 +237,9 @@ void moveConveyorStart() {
 }
 
 void moveConveyorMid() {
-  for (int i=0; i<6000; i++) {
+  long signed iterations = 75000;
+  long signed i = 0;
+  for (i=0; i<iterations; i++) {
     digitalWrite(stepperDirPin,LOW);
     digitalWrite(stepperEnaPin,HIGH);
     digitalWrite(stepperPulsePin,HIGH);
@@ -219,7 +251,9 @@ void moveConveyorMid() {
 }
 
 void moveConveyorEnd() {
-  for (int i=0; i<6000; i++) {
+  long signed iterations = 40000;
+  long signed i = 0;
+  for (i=0; i<iterations; i++) {
     digitalWrite(stepperDirPin,LOW);
     digitalWrite(stepperEnaPin,HIGH);
     digitalWrite(stepperPulsePin,HIGH);
@@ -229,3 +263,4 @@ void moveConveyorEnd() {
   }
   sendResponse("done");
 }
+
