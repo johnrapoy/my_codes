@@ -130,11 +130,21 @@ class Machine:
             response = self.get_arduino_response()
         return bool(response)
 
+    def detect_proximity_sensor(self) -> bool:
+        """
+        Detect from proximity sensor
+        """
+        self.send_command(5)
+        response = self.get_arduino_response()
+        while not response:
+            response = self.get_arduino_response()
+        return bool(response) 
+    
     def detect_laser_sensor(self) -> bool:
         """
         Detect from laser sensor on arduino
         """
-        self.send_command(5)
+        self.send_command(6)
         response = self.get_arduino_response()
         while not response:
             response = self.get_arduino_response()
@@ -144,23 +154,13 @@ class Machine:
         """
         Open the height servo motor
         """
-        self.send_command(6)
+        self.send_command(7)
 
     def close_height_servo(self):
         """
         Close the height servo motor
         """
-        self.send_command(7)
-
-    def detect_proximity_sensor(self) -> bool:
-        """
-        Detect from proximity sensor
-        """
         self.send_command(8)
-        response = self.get_arduino_response()
-        while not response:
-            response = self.get_arduino_response()
-        return bool(response)
 
     def open_filling_servo(self):
         """
