@@ -13,12 +13,11 @@ const int laserTransmitterPin3 = 10;
 const int laserReceiverPin3 = 11;
 const int heightServoPin = 12;
 const int proximitySensorPin = 13;
-const int irSensorFillingPin = 14;
-const int fillingServoPin = 15;
-const int pneumaticRelay = 16;
-const int loadcellDoutPin = 17;
-const int loadcellSckPin = 18;
-const int irSensorCappingPin = 19;
+const int fillingServoPin = 14;
+const int pneumaticRelay = 15;
+const int loadcellDoutPin = 16;
+const int loadcellSckPin = 17;
+const int irSensorCappingPin = 18;
 
 const int ledPin = 4;
 const int buzzerPin = 5;
@@ -131,65 +130,58 @@ if (currentCommand == 5) {
   currentCommand = -1; 
 }
 
-  // Turn off servo motor
-  else if (currentCommand == 6) {
-    heightServo.write(180);
-    currentCommand = -1;
-  }
-
-  // Turn on servo motor
-  else if (currentCommand == 7) {
-    heightServo.write(0);
-    currentCommand = -1;
-  }
-
   // Detect from proximity sensor
-  else if (currentCommand == 8) {
+  else if (currentCommand == 6) {
     bool detected = digitalRead(proximitySensorPin);
     sendResponse(String(!detected));
     currentCommand = -1;
   }
 
-  // Detect from IR sensor
-  else if (currentCommand == 9) {
-    bool detected = digitalRead(irSensorBottlePin);
-    sendResponse(String(!detected));
+  // Turn off servo motor
+  else if (currentCommand == 7) {
+    heightServo.write(180);
+    currentCommand = -1;
+  }
+
+  // Turn on servo motor
+  else if (currentCommand == 8) {
+    heightServo.write(0);
     currentCommand = -1;
   }
 
     // Turn on servo motor
-  else if (currentCommand == 10) {
+  else if (currentCommand == 9) {
     fillingServo.write(180);
     currentCommand = -1;
   }
 
   // Turn off servo motor
-  else if (currentCommand == 11) {
+  else if (currentCommand == 10) {
     fillingServo.write(0);
     currentCommand = -1;
   }
 
 
   // Turn on pneumatic actuator
-  else if (currentCommand == 12) {
+  else if (currentCommand == 11) {
     digitalWrite(pneumaticRelay, HIGH);
     currentCommand = -1;
   }
 
   // Turn off pneumatic actuator
-  else if (currentCommand == 13) {
+  else if (currentCommand == 12) {
     digitalWrite(pneumaticRelay, LOW);
     currentCommand = -1;
   }
 
   // Get weight
-  else if (currentCommand == 14) {
+  else if (currentCommand == 13) {
     sendResponse(String((scale.get_units(), 1)));
     currentCommand = -1;
   }
 
   // Detect from IR sensor
-  else if (currentCommand == 15) {
+  else if (currentCommand == 14) {
     bool detected = digitalRead(irSensorCappingPin);
     sendResponse(String(detected));
     currentCommand = -1;
