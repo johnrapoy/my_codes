@@ -105,23 +105,29 @@ class Machine:
         """
         self.send_command(0)
 
+    def move_conveyor_start(self):
+        """
+        Send `moveConveyorReject` command to arduino
+        """
+        self.send_command(1)
+
     def move_conveyor_mid(self):
         """
         Send `moveConveyorMid` command to arduino
         """
-        self.send_command(1)
+        self.send_command(2)
 
     def move_conveyor_end(self):
         """
         Send `moveConveyorEnd` command to arduino
         """
-        self.send_command(2)
+        self.send_command(3)
         
     def detect_bottle_ir_sensor(self) -> bool:
         """
         Detect from capping IR sensor
         """
-        self.send_command(3)
+        self.send_command(4)
         response = self.get_arduino_response()
         while not response:
             response = self.get_arduino_response()
@@ -131,7 +137,7 @@ class Machine:
         """
         Detect from laser sensor on arduino
         """
-        self.send_command(4)
+        self.send_command(5)
         response = self.get_arduino_response()
         while not response:
             response = self.get_arduino_response()
@@ -141,27 +147,17 @@ class Machine:
         """
         Open the height servo motor
         """
-        self.send_command(5)
+        self.send_command(6)
 
     def close_height_servo(self):
         """
         Close the height servo motor
         """
-        self.send_command(6)
+        self.send_command(7)
 
     def detect_proximity_sensor(self) -> bool:
         """
         Detect from proximity sensor
-        """
-        self.send_command(7)
-        response = self.get_arduino_response()
-        while not response:
-            response = self.get_arduino_response()
-        return bool(response)
-
-    def detect_filling_ir_sensor(self) -> bool:
-        """
-        Detect from filling IR sensor
         """
         self.send_command(8)
         response = self.get_arduino_response()
