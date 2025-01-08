@@ -73,11 +73,9 @@ class Machine:
         Parameters:
         command (int) : Command to send
         """
-        self.logger.debug(f'Send Command to Arduino: {command}')
-        if command in self.available_commands:
-            self.arduino.write(bytes(str(command)+'\n','utf-8'))
-            self.arduino.flush()
+        if (command in self.available_commands):
             while True:
+                self.arduino.write(bytes(str(command)+'\n','utf-8'))
                 time.sleep(0.5)
                 response = self.get_arduino_response()
                 if response == 'ok':
@@ -96,7 +94,6 @@ class Machine:
             response = self.arduino.readline().decode('utf-8').rstrip()
         except UnicodeDecodeError:
             response = self.arduino.readline().decode('utf-8').rstrip()
-        self.logger.debug(f'Got response from arduino: {response}')
         return response
 
     def move_conveyor_start(self):
