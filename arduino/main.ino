@@ -144,7 +144,7 @@ if (currentCommand == 5) {
   }
 
   // Detect from proximity sensor
-  else if (currentCommand == 😎 {
+  else if (currentCommand == 8) {
     bool detected = digitalRead(proximitySensorPin);
     sendResponse(String(!detected));
     currentCommand = -1;
