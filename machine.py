@@ -20,10 +20,10 @@ class Machine:
         )
 
         self.state = False
-        self.arduino = serial.Serial(port, 9600, timeout=1)
-        self.available_commands = list(range(10))
+        self.arduino = serial.Serial(port, 9600, timeout=10)
+        self.available_commands = list(range(15))
 
-        self.ws_host = "ws://192.168.0.153:8000/ws"
+        self.ws_host = "ws://10.42.0.1:8000/ws"
         self.ws = None
         self.start_websocket_listener()
 
@@ -65,6 +65,29 @@ class Machine:
         self.ws.send(json_data)
         self.state = state
 
+    def save_transaction(self, quantity: int, weight: float):
+        """
+        Save transaction to server
+        """
+        data = {
+            'quantity': quantity,
+            'weight': weight,
+        }
+        json_data = json.dumps(data)
+        self.ws.send(json_data)
+
+    def notify(self, title: str, body: str):
+        """
+        Create and notify websocket server
+        """
+        data = {
+            'category': 'transaction',
+            'title': title,
+            'body': body,
+        }
+        json_data = json.dumps(data)
+        self.ws.send(json_data)
+
     def send_command(self, command: int):
         """
         Send command to arduino. 
@@ -82,6 +105,7 @@ class Machine:
                     break
         else:
             raise Exception('Unknown command')
+        self.logger.info(f'Sent command to arduino: {command}')
             
     def get_arduino_response(self) -> str:
         """
@@ -93,7 +117,9 @@ class Machine:
         try:
             response = self.arduino.readline().decode('utf-8').rstrip()
         except UnicodeDecodeError:
+            self.logger.debug('UnicodeDecodeError occured')
             response = self.arduino.readline().decode('utf-8').rstrip()
+        self.logger.debug(f'Got response from arduino: {response}')
         return response
 
     def move_conveyor_start(self):
@@ -101,46 +127,57 @@ class Machine:
         Send `moveConveyorStart` command to arduino
         """
         self.send_command(0)
+        response = self.get_arduino_response()
+        while response != 'done':
+            response = self.get_arduino_response()
 
-    def move_conveyor_start(self):
+    def move_conveyor_reject(self):
         """
         Send `moveConveyorReject` command to arduino
         """
         self.send_command(1)
+        response = self.get_arduino_response()
+        while response != 'done':
+            response = self.get_arduino_response()
 
     def move_conveyor_mid(self):
         """
         Send `moveConveyorMid` command to arduino
         """
         self.send_command(2)
+        response = self.get_arduino_response()
+        while response != 'done':
+            response = self.get_arduino_response()
 
     def move_conveyor_end(self):
         """
         Send `moveConveyorEnd` command to arduino
         """
         self.send_command(3)
+        response = self.get_arduino_response()
+        while response != 'done':
+            response = self.get_arduino_response()
+
+    def move_conveyor_final(self):
+        """
+        Send `moveConveyorEnd` command to arduino
+        """
+        self.send_command(4)
+        response = self.get_arduino_response()
+        while response != 'done':
+            response = self.get_arduino_response()
         
     def detect_bottle_ir_sensor(self) -> bool:
         """
         Detect from capping IR sensor
         """
-        self.send_command(4)
-        response = self.get_arduino_response()
-        while not response:
-            response = self.get_arduino_response()
-        return bool(response)
-
-    def detect_proximity_sensor(self) -> bool:
-        """
-        Detect from proximity sensor
-        """
         self.send_command(5)
         response = self.get_arduino_response()
         while not response:
             response = self.get_arduino_response()
-        return bool(response) 
-    
-    def detect_laser_sensor(self) -> bool:
+        return (response == '1')
+
+    def detect_ir_sensor(self) -> bool:
         """
         Detect from laser sensor on arduino
         """
@@ -162,46 +199,46 @@ class Machine:
         """
         self.send_command(8)
 
+    def detect_proximity_sensor(self) -> bool:
+        """
+        Detect from proximity sensor
+        """
+        self.send_command(9)
+        response = self.get_arduino_response()
+        while not response:
+            response = self.get_arduino_response()
+        return bool(response) 
+
     def open_filling_servo(self):
         """
         Open the height servo motor
         """
-        self.send_command(9)
+        self.send_command(10)
 
     def close_filling_servo(self):
         """
         Close the height servo motor
         """
-        self.send_command(10)
+        self.send_command(11)
 
     def turn_on_pneumatic_actuator(self):
         """
         Turn on pneumatic actuator
         """
-        self.send_command(11)
+        self.send_command(12)
 
     def turn_off_pneumatic_actuator(self):
         """
         Turn off pneumatic actuator
         """
-        self.send_command(12)
+        self.send_command(13)
 
-    def get_weight(self) -> bool:
+    def get_weight(self) -> float:
         """
         Get weight from load cell on arduino
-        """
-        self.send_command(13)
-        response = self.get_arduino_response()
-        while not response:
-            response = self.get_arduino_response()
-        return float(response)
-
-    def detect_capping_ir_sensor(self) -> bool:
-        """
-        Detect from capping IR sensor
         """
         self.send_command(14)
         response = self.get_arduino_response()
         while not response:
             response = self.get_arduino_response()
-        return bool(response)
+        return float(response)

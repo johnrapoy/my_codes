@@ -30,6 +30,7 @@ Servo rejectServo;
 HX711 scale;
 
 const double calibrationFactor = -7050;
+float w1, w2;
 int currentCommand = -1;
 
 void setup() {
@@ -51,8 +52,8 @@ void setup() {
   pinMode(laserTransmitterPin3, OUTPUT);
   pinMode(laserReceiverPin3, INPUT);
   digitalWrite(laserTransmitterPin1, HIGH);
-   digitalWrite(laserTransmitterPin2, HIGH);
-   digitalWrite(laserTransmitterPin3, HIGH);
+  digitalWrite(laserTransmitterPin2, HIGH);
+  digitalWrite(laserTransmitterPin3, HIGH);
   heightServo.attach(heightServoPin);
 
   // Plastic or can sensor
@@ -62,21 +63,18 @@ void setup() {
   fillingServo.write(0);
 
   // Filling
-  pinMode(irSensorFillingPin, INPUT);
   pinMode(pneumaticRelay, OUTPUT);
+  Serial.println("HERE");
   fillingServo.attach(fillingServoPin);
-  scale.begin(loadcellDoutPin, loadcellSckPin);
-  scale.set_scale(calibrationFactor);
-  scale.tare();
-  while (true){
-    if (scale.is_ready()) {
-      break;
-    }
-  }
+//  scale.begin(loadcellDoutPin, loadcellSckPin);
+//  scale.set_scale(calibrationFactor);
+//  scale.tare();
 
     // Capping
   pinMode(irSensorCappingPin, INPUT);
-  }
+
+  Serial.println("Setup done");
+ }
 
 
 void loop() {
@@ -116,19 +114,19 @@ void loop() {
   } 
 
   
-// Detect height based on laser sensors
-if (currentCommand == 5) {
-  bool value1 = digitalRead(laserReceiverPin1);
-  bool value2 = digitalRead(laserReceiverPin2);
-  bool value3 = digitalRead(laserReceiverPin3);
-  bool response = false;
-  if (value1 && value2 && !value3) {
-    response = true;
+  // Detect height based on laser sensors
+  if (currentCommand == 5) {
+    bool value1 = digitalRead(laserReceiverPin1);
+    bool value2 = digitalRead(laserReceiverPin2);
+    bool value3 = digitalRead(laserReceiverPin3);
+    bool response = false;
+    if (value1 && value2 && !value3) && (!value1 && value2 && !value3){
+      response = true;
+    }
+  
+    sendResponse(String(response));
+    currentCommand = -1; 
   }
-
-  sendResponse(String(response));
-  currentCommand = -1; 
-}
 
   // Detect from proximity sensor
   else if (currentCommand == 6) {
@@ -176,7 +174,7 @@ if (currentCommand == 5) {
 
   // Get weight
   else if (currentCommand == 13) {
-    sendResponse(String((scale.get_units(), 1)));
+    getWeight();
     currentCommand = -1;
   }
 
@@ -243,7 +241,7 @@ void moveConveyorMid() {
 }
 
 void moveConveyorEnd() {
-  long signed iterations = 40000;
+  long signed iterations = 30000;
   long signed i = 0;
   for (i=0; i<iterations; i++) {
     digitalWrite(stepperDirPin,LOW);
@@ -256,3 +254,15 @@ void moveConveyorEnd() {
   sendResponse("done");
 }
 
+void getWeight() {
+  w1 = scale.get_units(10);
+  delay(100);
+  w2 = scale.get_units();
+  while ((abs(w1-w2) > 10) && (w1 < 1)) {
+    w1 = w2;
+    w2 = scale.get_units();
+    delay(100);
+  }
+  float gram = abs(w1);
+  sendResponse(String(gram));
+}
