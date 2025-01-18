@@ -160,7 +160,7 @@ class Machine:
 
     def move_conveyor_final(self):
         """
-        Send `moveConveyorEnd` command to arduino
+        Send `moveConveyorFinal` command to arduino
         """
         self.send_command(4)
         response = self.get_arduino_response()
@@ -169,7 +169,7 @@ class Machine:
         
     def detect_bottle_ir_sensor(self) -> bool:
         """
-        Detect from capping IR sensor
+        Detect from bottle ir sensor
         """
         self.send_command(5)
         response = self.get_arduino_response()
@@ -179,7 +179,7 @@ class Machine:
 
     def detect_ir_sensor(self) -> bool:
         """
-        Detect from laser sensor on arduino
+        Detect from ir sensor on arduino
         """
         self.send_command(6)
         response = self.get_arduino_response()
