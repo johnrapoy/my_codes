@@ -51,7 +51,8 @@ while True:
             recapping_done = machine.detect_capping_ir_sensor()
 
         # Move conveyor after capping
-
+        machine.move_conveyor_final()
+        
         processed += 1
         total_weight += weight
 
