@@ -35,21 +35,24 @@ while True:
 
         machine.move_conveyor_mid()
         machine.open_filling_servo()
-        machine.turn_on_pneumatic_actuator()
 
-        weight = 0
+        # Filling Bottle
+        weight = 0  
+
         while weight < 95.7:
+            machine.turn_on_pneumatic_actuator()
+            time.sleep(5) 
+            
+            machine.turn_off_pneumatic_actuator()
+            time.sleep(5)
+           
             weight = machine.get_weight()
             machine.logger.debug(f'Current weight: {weight}')
-
+        
         machine.turn_off_pneumatic_actuator()
         machine.close_filling_servo()
         machine.move_conveyor_end()
-
-        recapping_done = False
-        while not recapping_done:
-            recapping_done = machine.detect_capping_ir_sensor()
-
+        time.sleep(5)
         # Move conveyor after capping
         machine.move_conveyor_final()
         
