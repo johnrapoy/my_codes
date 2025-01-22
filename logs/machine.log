@@ -387,3 +387,430 @@
 2025-01-15 16:27:35.940 | INFO     | machine:send_command:108 - Sent command to arduino: 4
 2025-01-15 16:27:39.188 | INFO     | machine:_parse_websocket_message:51 - {'type': 'parameter', 'status': False, 'weight': 1.3, 'updated_at': '2025-01-15T08:27:39.115008', 'origin': 'machine'}
 2025-01-15 16:27:40.447 | INFO     | machine:send_command:108 - Sent command to arduino: 4
+2025-01-22 21:33:45.224 | INFO     | machine:_parse_websocket_message:51 - {'type': 'initialize', 'parameters': {'weight': 1.3, 'status': True, 'created_at': '2024-12-22T06:04:29', 'updated_at': '2025-01-15T14:01:38.895691'}, 'transactions': [{'id': 9, 'quantity': 1, 'weight': 95.7, 'created_at': '2025-01-09T05:13:33.664503', 'updated_at': '2025-01-09T05:12:39.908522'}, {'id': 8, 'quantity': 5, 'weight': 3.0, 'created_at': '2024-12-22T09:36:47.139516', 'updated_at': '2024-12-22T09:34:58.835121'}, {'id': 7, 'quantity': 5, 'weight': 2.5, 'created_at': '2024-12-22T09:36:34.128705', 'updated_at': '2024-12-22T09:34:58.835121'}, {'id': 6, 'quantity': 5, 'weight': 1.5, 'created_at': '2024-12-22T09:35:19.832237', 'updated_at': '2024-12-22T09:34:58.835121'}, {'id': 5, 'quantity': 5, 'weight': 0.5, 'created_at': '2024-12-22T09:33:46.044234', 'updated_at': '2024-12-22T09:30:48.875760'}, {'id': 4, 'quantity': 5, 'weight': 0.5, 'created_at': '2024-12-22T09:32:15.600305', 'updated_at': '2024-12-22T09:30:48.875760'}, {'id': 3, 'quantity': 3, 'weight': 1.2, 'created_at': '2024-12-22T09:31:31.566731', 'updated_at': '2024-12-22T09:30:48.875760'}, {'id': 2, 'quantity': 5, 'weight': 1.5, 'created_at': '2024-12-22T09:28:53.529200', 'updated_at': '2024-12-22T06:11:15.587816'}, {'id': 1, 'quantity': 12, 'weight': 45.5, 'created_at': '2024-12-22T09:07:30.732087', 'updated_at': '2024-12-22T06:11:15.587816'}], 'notifications': []}
+2025-01-22 21:36:35.668 | INFO     | machine:_parse_websocket_message:51 - {'type': 'parameter', 'status': False, 'weight': 1.3, 'updated_at': '2025-01-22T13:36:35.571847', 'origin': 'machine'}
+2025-01-22 21:36:55.531 | INFO     | machine:_parse_websocket_message:51 - {'type': 'parameter', 'status': True, 'weight': 1.3, 'updated_at': '2025-01-22T13:36:55.459746', 'origin': 'machine'}
+2025-01-22 21:36:56.034 | INFO     | machine:send_command:108 - Sent command to arduino: 5
+2025-01-22 21:36:56.540 | INFO     | machine:send_command:108 - Sent command to arduino: 5
+2025-01-22 21:36:56.541 | INFO     | __main__:<module>:20 - Bottle detected
+2025-01-22 21:36:57.042 | INFO     | machine:send_command:108 - Sent command to arduino: 0
+2025-01-22 21:37:01.409 | INFO     | machine:send_command:108 - Sent command to arduino: 9
+2025-01-22 21:40:04.322 | INFO     | machine:_parse_websocket_message:51 - {'type': 'initialize', 'parameters': {'weight': 1.3, 'status': True, 'created_at': '2024-12-22T06:04:29', 'updated_at': '2025-01-22T13:36:55.459746'}, 'transactions': [{'id': 9, 'quantity': 1, 'weight': 95.7, 'created_at': '2025-01-09T05:13:33.664503', 'updated_at': '2025-01-09T05:12:39.908522'}, {'id': 8, 'quantity': 5, 'weight': 3.0, 'created_at': '2024-12-22T09:36:47.139516', 'updated_at': '2024-12-22T09:34:58.835121'}, {'id': 7, 'quantity': 5, 'weight': 2.5, 'created_at': '2024-12-22T09:36:34.128705', 'updated_at': '2024-12-22T09:34:58.835121'}, {'id': 6, 'quantity': 5, 'weight': 1.5, 'created_at': '2024-12-22T09:35:19.832237', 'updated_at': '2024-12-22T09:34:58.835121'}, {'id': 5, 'quantity': 5, 'weight': 0.5, 'created_at': '2024-12-22T09:33:46.044234', 'updated_at': '2024-12-22T09:30:48.875760'}, {'id': 4, 'quantity': 5, 'weight': 0.5, 'created_at': '2024-12-22T09:32:15.600305', 'updated_at': '2024-12-22T09:30:48.875760'}, {'id': 3, 'quantity': 3, 'weight': 1.2, 'created_at': '2024-12-22T09:31:31.566731', 'updated_at': '2024-12-22T09:30:48.875760'}, {'id': 2, 'quantity': 5, 'weight': 1.5, 'created_at': '2024-12-22T09:28:53.529200', 'updated_at': '2024-12-22T06:11:15.587816'}, {'id': 1, 'quantity': 12, 'weight': 45.5, 'created_at': '2024-12-22T09:07:30.732087', 'updated_at': '2024-12-22T06:11:15.587816'}], 'notifications': []}
+2025-01-22 21:40:12.521 | INFO     | machine:_parse_websocket_message:51 - {'type': 'parameter', 'status': False, 'weight': 1.3, 'updated_at': '2025-01-22T13:40:12.477473', 'origin': 'machine'}
+2025-01-22 21:40:15.014 | INFO     | machine:_parse_websocket_message:51 - {'type': 'parameter', 'status': True, 'weight': 1.3, 'updated_at': '2025-01-22T13:40:14.971074', 'origin': 'machine'}
+2025-01-22 21:40:15.528 | INFO     | machine:send_command:108 - Sent command to arduino: 5
+2025-01-22 21:40:15.528 | INFO     | __main__:<module>:20 - Bottle detected
+2025-01-22 21:40:16.030 | INFO     | machine:send_command:108 - Sent command to arduino: 0
+2025-01-22 21:40:20.393 | INFO     | machine:send_command:108 - Sent command to arduino: 9
+2025-01-22 21:40:20.895 | INFO     | machine:send_command:108 - Sent command to arduino: 6
+2025-01-22 21:40:20.896 | INFO     | __main__:<module>:25 - Bottle scan: is_metal=True, height_passed=True
+2025-01-22 21:40:20.896 | INFO     | __main__:<module>:29 - Rejecting bottle
+2025-01-22 21:40:21.397 | INFO     | machine:send_command:108 - Sent command to arduino: 1
+2025-01-22 21:40:22.048 | INFO     | machine:send_command:108 - Sent command to arduino: 8
+2025-01-22 21:40:25.549 | INFO     | machine:send_command:108 - Sent command to arduino: 7
+2025-01-22 21:40:26.051 | INFO     | machine:send_command:108 - Sent command to arduino: 5
+2025-01-22 21:40:26.553 | INFO     | machine:send_command:108 - Sent command to arduino: 5
+2025-01-22 21:40:26.553 | INFO     | __main__:<module>:20 - Bottle detected
+2025-01-22 21:40:27.054 | INFO     | machine:send_command:108 - Sent command to arduino: 0
+2025-01-22 21:40:31.420 | INFO     | machine:send_command:108 - Sent command to arduino: 9
+2025-01-22 21:40:31.922 | INFO     | machine:send_command:108 - Sent command to arduino: 6
+2025-01-22 21:40:31.922 | INFO     | __main__:<module>:25 - Bottle scan: is_metal=True, height_passed=True
+2025-01-22 21:40:31.923 | INFO     | __main__:<module>:29 - Rejecting bottle
+2025-01-22 21:40:32.424 | INFO     | machine:send_command:108 - Sent command to arduino: 1
+2025-01-22 21:40:33.079 | INFO     | machine:send_command:108 - Sent command to arduino: 8
+2025-01-22 21:40:36.581 | INFO     | machine:send_command:108 - Sent command to arduino: 7
+2025-01-22 21:40:37.084 | INFO     | machine:send_command:108 - Sent command to arduino: 5
+2025-01-22 21:40:37.585 | INFO     | machine:send_command:108 - Sent command to arduino: 5
+2025-01-22 21:40:37.586 | INFO     | __main__:<module>:20 - Bottle detected
+2025-01-22 21:40:38.087 | INFO     | machine:send_command:108 - Sent command to arduino: 0
+2025-01-22 21:40:42.457 | INFO     | machine:send_command:108 - Sent command to arduino: 9
+2025-01-22 21:40:42.958 | INFO     | machine:send_command:108 - Sent command to arduino: 6
+2025-01-22 21:40:42.959 | INFO     | __main__:<module>:25 - Bottle scan: is_metal=True, height_passed=True
+2025-01-22 21:40:42.959 | INFO     | __main__:<module>:29 - Rejecting bottle
+2025-01-22 21:40:43.460 | INFO     | machine:send_command:108 - Sent command to arduino: 1
+2025-01-22 21:40:44.112 | INFO     | machine:send_command:108 - Sent command to arduino: 8
+2025-01-22 21:40:47.614 | INFO     | machine:send_command:108 - Sent command to arduino: 7
+2025-01-22 21:40:48.116 | INFO     | machine:send_command:108 - Sent command to arduino: 5
+2025-01-22 21:40:48.618 | INFO     | machine:send_command:108 - Sent command to arduino: 5
+2025-01-22 21:40:48.619 | INFO     | __main__:<module>:20 - Bottle detected
+2025-01-22 21:40:49.120 | INFO     | machine:send_command:108 - Sent command to arduino: 0
+2025-01-22 21:40:53.485 | INFO     | machine:send_command:108 - Sent command to arduino: 9
+2025-01-22 21:40:53.987 | INFO     | machine:send_command:108 - Sent command to arduino: 6
+2025-01-22 21:40:53.988 | INFO     | __main__:<module>:25 - Bottle scan: is_metal=True, height_passed=True
+2025-01-22 21:40:53.988 | INFO     | __main__:<module>:29 - Rejecting bottle
+2025-01-22 21:40:54.489 | INFO     | machine:send_command:108 - Sent command to arduino: 1
+2025-01-22 21:40:55.142 | INFO     | machine:send_command:108 - Sent command to arduino: 8
+2025-01-22 21:40:58.643 | INFO     | machine:send_command:108 - Sent command to arduino: 7
+2025-01-22 21:40:59.145 | INFO     | machine:send_command:108 - Sent command to arduino: 5
+2025-01-22 21:40:59.647 | INFO     | machine:send_command:108 - Sent command to arduino: 5
+2025-01-22 21:40:59.648 | INFO     | __main__:<module>:20 - Bottle detected
+2025-01-22 21:41:00.149 | INFO     | machine:send_command:108 - Sent command to arduino: 0
+2025-01-22 21:41:04.516 | INFO     | machine:send_command:108 - Sent command to arduino: 9
+2025-01-22 21:41:05.019 | INFO     | machine:send_command:108 - Sent command to arduino: 6
+2025-01-22 21:41:05.019 | INFO     | __main__:<module>:25 - Bottle scan: is_metal=True, height_passed=True
+2025-01-22 21:41:05.019 | INFO     | __main__:<module>:29 - Rejecting bottle
+2025-01-22 21:41:05.520 | INFO     | machine:send_command:108 - Sent command to arduino: 1
+2025-01-22 21:41:06.172 | INFO     | machine:send_command:108 - Sent command to arduino: 8
+2025-01-22 21:41:09.673 | INFO     | machine:send_command:108 - Sent command to arduino: 7
+2025-01-22 21:41:10.175 | INFO     | machine:send_command:108 - Sent command to arduino: 5
+2025-01-22 21:41:10.677 | INFO     | machine:send_command:108 - Sent command to arduino: 5
+2025-01-22 21:41:10.678 | INFO     | __main__:<module>:20 - Bottle detected
+2025-01-22 21:41:11.179 | INFO     | machine:send_command:108 - Sent command to arduino: 0
+2025-01-22 21:41:15.544 | INFO     | machine:send_command:108 - Sent command to arduino: 9
+2025-01-22 21:41:16.045 | INFO     | machine:send_command:108 - Sent command to arduino: 6
+2025-01-22 21:41:16.046 | INFO     | __main__:<module>:25 - Bottle scan: is_metal=True, height_passed=True
+2025-01-22 21:41:16.046 | INFO     | __main__:<module>:29 - Rejecting bottle
+2025-01-22 21:41:16.547 | INFO     | machine:send_command:108 - Sent command to arduino: 1
+2025-01-22 21:41:17.198 | INFO     | machine:send_command:108 - Sent command to arduino: 8
+2025-01-22 21:41:20.700 | INFO     | machine:send_command:108 - Sent command to arduino: 7
+2025-01-22 21:50:09.496 | INFO     | machine:_parse_websocket_message:51 - {'type': 'initialize', 'parameters': {'weight': 1.3, 'status': True, 'created_at': '2024-12-22T06:04:29', 'updated_at': '2025-01-22T13:40:14.971074'}, 'transactions': [{'id': 9, 'quantity': 1, 'weight': 95.7, 'created_at': '2025-01-09T05:13:33.664503', 'updated_at': '2025-01-09T05:12:39.908522'}, {'id': 8, 'quantity': 5, 'weight': 3.0, 'created_at': '2024-12-22T09:36:47.139516', 'updated_at': '2024-12-22T09:34:58.835121'}, {'id': 7, 'quantity': 5, 'weight': 2.5, 'created_at': '2024-12-22T09:36:34.128705', 'updated_at': '2024-12-22T09:34:58.835121'}, {'id': 6, 'quantity': 5, 'weight': 1.5, 'created_at': '2024-12-22T09:35:19.832237', 'updated_at': '2024-12-22T09:34:58.835121'}, {'id': 5, 'quantity': 5, 'weight': 0.5, 'created_at': '2024-12-22T09:33:46.044234', 'updated_at': '2024-12-22T09:30:48.875760'}, {'id': 4, 'quantity': 5, 'weight': 0.5, 'created_at': '2024-12-22T09:32:15.600305', 'updated_at': '2024-12-22T09:30:48.875760'}, {'id': 3, 'quantity': 3, 'weight': 1.2, 'created_at': '2024-12-22T09:31:31.566731', 'updated_at': '2024-12-22T09:30:48.875760'}, {'id': 2, 'quantity': 5, 'weight': 1.5, 'created_at': '2024-12-22T09:28:53.529200', 'updated_at': '2024-12-22T06:11:15.587816'}, {'id': 1, 'quantity': 12, 'weight': 45.5, 'created_at': '2024-12-22T09:07:30.732087', 'updated_at': '2024-12-22T06:11:15.587816'}], 'notifications': []}
+2025-01-22 21:50:31.883 | INFO     | machine:_parse_websocket_message:51 - {'type': 'parameter', 'status': False, 'weight': 1.3, 'updated_at': '2025-01-22T13:50:31.821503', 'origin': 'machine'}
+2025-01-22 21:50:34.967 | INFO     | machine:_parse_websocket_message:51 - {'type': 'parameter', 'status': True, 'weight': 1.3, 'updated_at': '2025-01-22T13:50:34.927659', 'origin': 'machine'}
+2025-01-22 21:50:35.472 | INFO     | machine:send_command:108 - Sent command to arduino: 5
+2025-01-22 21:50:35.473 | INFO     | __main__:<module>:20 - Bottle detected
+2025-01-22 21:50:35.974 | INFO     | machine:send_command:108 - Sent command to arduino: 0
+2025-01-22 21:50:40.341 | INFO     | machine:send_command:108 - Sent command to arduino: 9
+2025-01-22 21:50:40.843 | INFO     | machine:send_command:108 - Sent command to arduino: 6
+2025-01-22 21:50:40.845 | INFO     | __main__:<module>:25 - Bottle scan: is_metal=False, height_passed=True
+2025-01-22 21:50:41.347 | INFO     | machine:send_command:108 - Sent command to arduino: 2
+2025-01-22 21:50:50.335 | INFO     | machine:send_command:108 - Sent command to arduino: 10
+2025-01-22 21:50:50.836 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 21:50:56.339 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 21:51:01.841 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 21:51:02.346 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 21:51:07.848 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 21:51:13.350 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 21:51:13.854 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 21:51:14.355 | INFO     | machine:send_command:108 - Sent command to arduino: 11
+2025-01-22 21:51:14.856 | INFO     | machine:send_command:108 - Sent command to arduino: 3
+2025-01-22 21:51:24.355 | INFO     | machine:send_command:108 - Sent command to arduino: 4
+2025-01-22 21:51:28.852 | INFO     | machine:send_command:108 - Sent command to arduino: 5
+2025-01-22 21:51:28.853 | INFO     | __main__:<module>:20 - Bottle detected
+2025-01-22 21:51:29.354 | INFO     | machine:send_command:108 - Sent command to arduino: 0
+2025-01-22 21:51:33.718 | INFO     | machine:send_command:108 - Sent command to arduino: 9
+2025-01-22 21:51:34.219 | INFO     | machine:send_command:108 - Sent command to arduino: 6
+2025-01-22 21:51:34.220 | INFO     | __main__:<module>:25 - Bottle scan: is_metal=False, height_passed=True
+2025-01-22 21:51:34.722 | INFO     | machine:send_command:108 - Sent command to arduino: 2
+2025-01-22 21:51:43.709 | INFO     | machine:send_command:108 - Sent command to arduino: 10
+2025-01-22 21:51:44.210 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 21:51:49.713 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 21:51:55.215 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 21:51:55.717 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 21:52:01.219 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 21:52:06.721 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 21:52:07.224 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 21:52:12.725 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 21:52:18.227 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 21:52:18.730 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 21:52:24.233 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 21:52:29.735 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 21:52:30.237 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 21:52:35.738 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 21:52:41.240 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 21:52:41.743 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 21:52:42.244 | INFO     | machine:send_command:108 - Sent command to arduino: 11
+2025-01-22 21:52:42.745 | INFO     | machine:send_command:108 - Sent command to arduino: 3
+2025-01-22 21:52:52.244 | INFO     | machine:send_command:108 - Sent command to arduino: 4
+2025-01-22 21:52:56.745 | INFO     | machine:send_command:108 - Sent command to arduino: 5
+2025-01-22 21:52:56.750 | INFO     | __main__:<module>:20 - Bottle detected
+2025-01-22 21:52:57.254 | INFO     | machine:send_command:108 - Sent command to arduino: 0
+2025-01-22 21:53:01.615 | INFO     | machine:send_command:108 - Sent command to arduino: 9
+2025-01-22 21:53:02.116 | INFO     | machine:send_command:108 - Sent command to arduino: 6
+2025-01-22 21:53:02.117 | INFO     | __main__:<module>:25 - Bottle scan: is_metal=False, height_passed=True
+2025-01-22 21:53:02.619 | INFO     | machine:send_command:108 - Sent command to arduino: 2
+2025-01-22 21:53:11.605 | INFO     | machine:send_command:108 - Sent command to arduino: 10
+2025-01-22 21:53:12.107 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 21:53:17.609 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 21:53:23.111 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 21:53:23.614 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 21:53:29.116 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 21:53:34.618 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 21:53:35.120 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 21:53:40.622 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 21:53:46.124 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 21:53:46.628 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 21:53:47.130 | INFO     | machine:send_command:108 - Sent command to arduino: 11
+2025-01-22 21:53:47.632 | INFO     | machine:send_command:108 - Sent command to arduino: 3
+2025-01-22 21:56:51.863 | INFO     | machine:_parse_websocket_message:51 - {'type': 'initialize', 'parameters': {'weight': 1.3, 'status': True, 'created_at': '2024-12-22T06:04:29', 'updated_at': '2025-01-22T13:50:34.927659'}, 'transactions': [{'id': 9, 'quantity': 1, 'weight': 95.7, 'created_at': '2025-01-09T05:13:33.664503', 'updated_at': '2025-01-09T05:12:39.908522'}, {'id': 8, 'quantity': 5, 'weight': 3.0, 'created_at': '2024-12-22T09:36:47.139516', 'updated_at': '2024-12-22T09:34:58.835121'}, {'id': 7, 'quantity': 5, 'weight': 2.5, 'created_at': '2024-12-22T09:36:34.128705', 'updated_at': '2024-12-22T09:34:58.835121'}, {'id': 6, 'quantity': 5, 'weight': 1.5, 'created_at': '2024-12-22T09:35:19.832237', 'updated_at': '2024-12-22T09:34:58.835121'}, {'id': 5, 'quantity': 5, 'weight': 0.5, 'created_at': '2024-12-22T09:33:46.044234', 'updated_at': '2024-12-22T09:30:48.875760'}, {'id': 4, 'quantity': 5, 'weight': 0.5, 'created_at': '2024-12-22T09:32:15.600305', 'updated_at': '2024-12-22T09:30:48.875760'}, {'id': 3, 'quantity': 3, 'weight': 1.2, 'created_at': '2024-12-22T09:31:31.566731', 'updated_at': '2024-12-22T09:30:48.875760'}, {'id': 2, 'quantity': 5, 'weight': 1.5, 'created_at': '2024-12-22T09:28:53.529200', 'updated_at': '2024-12-22T06:11:15.587816'}, {'id': 1, 'quantity': 12, 'weight': 45.5, 'created_at': '2024-12-22T09:07:30.732087', 'updated_at': '2024-12-22T06:11:15.587816'}], 'notifications': []}
+2025-01-22 21:56:57.007 | INFO     | machine:_parse_websocket_message:51 - {'type': 'parameter', 'status': False, 'weight': 1.3, 'updated_at': '2025-01-22T13:56:56.890172', 'origin': 'machine'}
+2025-01-22 21:57:01.780 | INFO     | machine:_parse_websocket_message:51 - {'type': 'parameter', 'status': True, 'weight': 1.3, 'updated_at': '2025-01-22T13:57:01.686270', 'origin': 'machine'}
+2025-01-22 21:57:02.282 | INFO     | machine:send_command:108 - Sent command to arduino: 5
+2025-01-22 21:57:02.284 | INFO     | __main__:<module>:20 - Bottle detected
+2025-01-22 21:57:02.786 | INFO     | machine:send_command:108 - Sent command to arduino: 0
+2025-01-22 21:57:07.149 | INFO     | machine:send_command:108 - Sent command to arduino: 9
+2025-01-22 21:57:07.651 | INFO     | machine:send_command:108 - Sent command to arduino: 6
+2025-01-22 21:57:07.652 | INFO     | __main__:<module>:25 - Bottle scan: is_metal=False, height_passed=True
+2025-01-22 21:57:08.167 | INFO     | machine:send_command:108 - Sent command to arduino: 2
+2025-01-22 21:57:17.155 | INFO     | machine:send_command:108 - Sent command to arduino: 10
+2025-01-22 21:57:17.657 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 21:57:23.158 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 21:57:28.659 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 21:57:29.161 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 21:57:34.662 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 21:57:40.164 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 21:57:40.666 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 21:57:46.167 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 21:57:51.668 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 21:57:52.170 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 21:57:57.673 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 21:58:03.174 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 21:58:03.677 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 21:58:09.179 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 21:58:14.682 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 21:58:15.185 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 21:58:20.688 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 21:58:26.190 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 21:58:26.694 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 21:58:32.195 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 21:58:37.697 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 21:58:38.200 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 21:58:38.701 | INFO     | machine:send_command:108 - Sent command to arduino: 11
+2025-01-22 21:58:39.202 | INFO     | machine:send_command:108 - Sent command to arduino: 3
+2025-01-22 21:58:48.701 | INFO     | machine:send_command:108 - Sent command to arduino: 4
+2025-01-22 21:58:53.201 | INFO     | machine:send_command:108 - Sent command to arduino: 5
+2025-01-22 21:58:53.203 | INFO     | __main__:<module>:20 - Bottle detected
+2025-01-22 21:58:53.704 | INFO     | machine:send_command:108 - Sent command to arduino: 0
+2025-01-22 21:58:58.068 | INFO     | machine:send_command:108 - Sent command to arduino: 9
+2025-01-22 21:58:58.570 | INFO     | machine:send_command:108 - Sent command to arduino: 6
+2025-01-22 21:58:58.572 | INFO     | __main__:<module>:25 - Bottle scan: is_metal=False, height_passed=True
+2025-01-22 21:58:59.073 | INFO     | machine:send_command:108 - Sent command to arduino: 2
+2025-01-22 21:59:08.063 | INFO     | machine:send_command:108 - Sent command to arduino: 10
+2025-01-22 21:59:08.565 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 21:59:14.069 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 21:59:19.570 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 21:59:20.072 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 21:59:25.574 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 21:59:31.075 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 21:59:31.576 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 21:59:32.081 | INFO     | machine:send_command:108 - Sent command to arduino: 11
+2025-01-22 21:59:32.583 | INFO     | machine:send_command:108 - Sent command to arduino: 3
+2025-01-22 21:59:42.082 | INFO     | machine:send_command:108 - Sent command to arduino: 4
+2025-01-22 21:59:46.580 | INFO     | machine:send_command:108 - Sent command to arduino: 5
+2025-01-22 21:59:46.581 | INFO     | __main__:<module>:20 - Bottle detected
+2025-01-22 21:59:47.082 | INFO     | machine:send_command:108 - Sent command to arduino: 0
+2025-01-22 21:59:51.446 | INFO     | machine:send_command:108 - Sent command to arduino: 9
+2025-01-22 21:59:51.947 | INFO     | machine:send_command:108 - Sent command to arduino: 6
+2025-01-22 21:59:51.947 | INFO     | __main__:<module>:25 - Bottle scan: is_metal=False, height_passed=True
+2025-01-22 21:59:52.449 | INFO     | machine:send_command:108 - Sent command to arduino: 2
+2025-01-22 22:00:01.436 | INFO     | machine:send_command:108 - Sent command to arduino: 10
+2025-01-22 22:00:01.937 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 22:00:07.442 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 22:00:12.944 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 22:00:13.446 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 22:00:18.948 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 22:00:24.450 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 22:00:24.953 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 22:00:30.454 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 22:00:35.956 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 22:00:36.459 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 22:00:41.961 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 22:00:47.463 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 22:00:47.966 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 22:00:48.467 | INFO     | machine:send_command:108 - Sent command to arduino: 11
+2025-01-22 22:00:48.968 | INFO     | machine:send_command:108 - Sent command to arduino: 3
+2025-01-22 22:00:58.470 | INFO     | machine:send_command:108 - Sent command to arduino: 4
+2025-01-22 22:01:02.972 | INFO     | machine:send_command:108 - Sent command to arduino: 5
+2025-01-22 22:01:02.974 | INFO     | __main__:<module>:20 - Bottle detected
+2025-01-22 22:01:03.476 | INFO     | machine:send_command:108 - Sent command to arduino: 0
+2025-01-22 22:26:35.749 | INFO     | machine:_parse_websocket_message:51 - {'type': 'initialize', 'parameters': {'weight': 1.3, 'status': True, 'created_at': '2024-12-22T06:04:29', 'updated_at': '2025-01-22T13:57:01.686270'}, 'transactions': [{'id': 9, 'quantity': 1, 'weight': 95.7, 'created_at': '2025-01-09T05:13:33.664503', 'updated_at': '2025-01-09T05:12:39.908522'}, {'id': 8, 'quantity': 5, 'weight': 3.0, 'created_at': '2024-12-22T09:36:47.139516', 'updated_at': '2024-12-22T09:34:58.835121'}, {'id': 7, 'quantity': 5, 'weight': 2.5, 'created_at': '2024-12-22T09:36:34.128705', 'updated_at': '2024-12-22T09:34:58.835121'}, {'id': 6, 'quantity': 5, 'weight': 1.5, 'created_at': '2024-12-22T09:35:19.832237', 'updated_at': '2024-12-22T09:34:58.835121'}, {'id': 5, 'quantity': 5, 'weight': 0.5, 'created_at': '2024-12-22T09:33:46.044234', 'updated_at': '2024-12-22T09:30:48.875760'}, {'id': 4, 'quantity': 5, 'weight': 0.5, 'created_at': '2024-12-22T09:32:15.600305', 'updated_at': '2024-12-22T09:30:48.875760'}, {'id': 3, 'quantity': 3, 'weight': 1.2, 'created_at': '2024-12-22T09:31:31.566731', 'updated_at': '2024-12-22T09:30:48.875760'}, {'id': 2, 'quantity': 5, 'weight': 1.5, 'created_at': '2024-12-22T09:28:53.529200', 'updated_at': '2024-12-22T06:11:15.587816'}, {'id': 1, 'quantity': 12, 'weight': 45.5, 'created_at': '2024-12-22T09:07:30.732087', 'updated_at': '2024-12-22T06:11:15.587816'}], 'notifications': []}
+2025-01-22 22:27:01.199 | INFO     | machine:_parse_websocket_message:51 - {'type': 'parameter', 'status': False, 'weight': 1.3, 'updated_at': '2025-01-22T14:27:01.165158', 'origin': 'machine'}
+2025-01-22 22:27:07.426 | INFO     | machine:_parse_websocket_message:51 - {'type': 'parameter', 'status': True, 'weight': 1.3, 'updated_at': '2025-01-22T14:27:07.379668', 'origin': 'machine'}
+2025-01-22 22:27:07.933 | INFO     | machine:send_command:108 - Sent command to arduino: 5
+2025-01-22 22:27:07.935 | INFO     | __main__:<module>:21 - Bottle detected
+2025-01-22 22:27:11.436 | INFO     | machine:send_command:108 - Sent command to arduino: 0
+2025-01-22 22:27:15.800 | INFO     | machine:send_command:108 - Sent command to arduino: 9
+2025-01-22 22:27:16.301 | INFO     | machine:send_command:108 - Sent command to arduino: 6
+2025-01-22 22:27:16.302 | INFO     | __main__:<module>:27 - Bottle scan: is_metal=False, height_passed=True
+2025-01-22 22:27:16.803 | INFO     | machine:send_command:108 - Sent command to arduino: 2
+2025-01-22 22:27:25.790 | INFO     | machine:send_command:108 - Sent command to arduino: 10
+2025-01-22 22:27:26.291 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 22:27:31.792 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 22:27:37.293 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 22:27:37.796 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 22:27:43.297 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 22:27:48.799 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 22:27:49.302 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 22:27:54.803 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 22:28:00.305 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 22:28:00.809 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 22:28:06.310 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 22:28:11.812 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 22:28:12.315 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 22:28:17.817 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 22:28:23.318 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 22:28:23.819 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 22:28:24.321 | INFO     | machine:send_command:108 - Sent command to arduino: 11
+2025-01-22 22:28:24.823 | INFO     | machine:send_command:108 - Sent command to arduino: 3
+2025-01-22 22:28:34.320 | INFO     | machine:send_command:108 - Sent command to arduino: 4
+2025-01-22 22:28:43.819 | INFO     | machine:send_command:108 - Sent command to arduino: 5
+2025-01-22 22:28:44.322 | INFO     | machine:send_command:108 - Sent command to arduino: 5
+2025-01-22 22:28:44.322 | INFO     | __main__:<module>:21 - Bottle detected
+2025-01-22 22:28:47.823 | INFO     | machine:send_command:108 - Sent command to arduino: 0
+2025-01-22 22:28:52.187 | INFO     | machine:send_command:108 - Sent command to arduino: 9
+2025-01-22 22:28:52.688 | INFO     | machine:send_command:108 - Sent command to arduino: 6
+2025-01-22 22:28:52.689 | INFO     | __main__:<module>:27 - Bottle scan: is_metal=False, height_passed=True
+2025-01-22 22:28:53.190 | INFO     | machine:send_command:108 - Sent command to arduino: 2
+2025-01-22 22:29:02.178 | INFO     | machine:send_command:108 - Sent command to arduino: 10
+2025-01-22 22:29:02.679 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 22:29:08.181 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 22:29:13.684 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 22:29:14.189 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 22:29:19.690 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 22:30:02.752 | INFO     | machine:_parse_websocket_message:51 - {'type': 'initialize', 'parameters': {'weight': 1.3, 'status': True, 'created_at': '2024-12-22T06:04:29', 'updated_at': '2025-01-22T14:27:07.379668'}, 'transactions': [{'id': 9, 'quantity': 1, 'weight': 95.7, 'created_at': '2025-01-09T05:13:33.664503', 'updated_at': '2025-01-09T05:12:39.908522'}, {'id': 8, 'quantity': 5, 'weight': 3.0, 'created_at': '2024-12-22T09:36:47.139516', 'updated_at': '2024-12-22T09:34:58.835121'}, {'id': 7, 'quantity': 5, 'weight': 2.5, 'created_at': '2024-12-22T09:36:34.128705', 'updated_at': '2024-12-22T09:34:58.835121'}, {'id': 6, 'quantity': 5, 'weight': 1.5, 'created_at': '2024-12-22T09:35:19.832237', 'updated_at': '2024-12-22T09:34:58.835121'}, {'id': 5, 'quantity': 5, 'weight': 0.5, 'created_at': '2024-12-22T09:33:46.044234', 'updated_at': '2024-12-22T09:30:48.875760'}, {'id': 4, 'quantity': 5, 'weight': 0.5, 'created_at': '2024-12-22T09:32:15.600305', 'updated_at': '2024-12-22T09:30:48.875760'}, {'id': 3, 'quantity': 3, 'weight': 1.2, 'created_at': '2024-12-22T09:31:31.566731', 'updated_at': '2024-12-22T09:30:48.875760'}, {'id': 2, 'quantity': 5, 'weight': 1.5, 'created_at': '2024-12-22T09:28:53.529200', 'updated_at': '2024-12-22T06:11:15.587816'}, {'id': 1, 'quantity': 12, 'weight': 45.5, 'created_at': '2024-12-22T09:07:30.732087', 'updated_at': '2024-12-22T06:11:15.587816'}], 'notifications': []}
+2025-01-22 22:30:16.593 | INFO     | machine:_parse_websocket_message:51 - {'type': 'parameter', 'status': False, 'weight': 1.3, 'updated_at': '2025-01-22T14:30:16.547233', 'origin': 'machine'}
+2025-01-22 22:30:54.929 | INFO     | machine:_parse_websocket_message:51 - {'type': 'parameter', 'status': True, 'weight': 1.3, 'updated_at': '2025-01-22T14:30:54.898379', 'origin': 'machine'}
+2025-01-22 22:30:55.435 | INFO     | machine:send_command:108 - Sent command to arduino: 5
+2025-01-22 22:30:55.937 | INFO     | machine:send_command:108 - Sent command to arduino: 5
+2025-01-22 22:30:55.938 | INFO     | __main__:<module>:21 - Bottle detected
+2025-01-22 22:30:56.439 | INFO     | machine:send_command:108 - Sent command to arduino: 0
+2025-01-22 22:31:00.805 | INFO     | machine:send_command:108 - Sent command to arduino: 9
+2025-01-22 22:31:01.307 | INFO     | machine:send_command:108 - Sent command to arduino: 6
+2025-01-22 22:31:01.308 | INFO     | __main__:<module>:26 - Bottle scan: is_metal=False, height_passed=True
+2025-01-22 22:31:01.815 | INFO     | machine:send_command:108 - Sent command to arduino: 2
+2025-01-22 22:31:10.799 | INFO     | machine:send_command:108 - Sent command to arduino: 10
+2025-01-22 22:31:11.301 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 22:31:16.805 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 22:31:22.307 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 22:31:22.811 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 22:31:28.313 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 22:31:33.815 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 22:31:34.320 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 22:31:39.821 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 22:31:45.322 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 22:31:45.826 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 22:31:51.329 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 22:48:40.493 | INFO     | machine:_parse_websocket_message:51 - {'type': 'initialize', 'parameters': {'weight': 1.3, 'status': True, 'created_at': '2024-12-22T06:04:29', 'updated_at': '2025-01-22T14:30:54.898379'}, 'transactions': [{'id': 9, 'quantity': 1, 'weight': 95.7, 'created_at': '2025-01-09T05:13:33.664503', 'updated_at': '2025-01-09T05:12:39.908522'}, {'id': 8, 'quantity': 5, 'weight': 3.0, 'created_at': '2024-12-22T09:36:47.139516', 'updated_at': '2024-12-22T09:34:58.835121'}, {'id': 7, 'quantity': 5, 'weight': 2.5, 'created_at': '2024-12-22T09:36:34.128705', 'updated_at': '2024-12-22T09:34:58.835121'}, {'id': 6, 'quantity': 5, 'weight': 1.5, 'created_at': '2024-12-22T09:35:19.832237', 'updated_at': '2024-12-22T09:34:58.835121'}, {'id': 5, 'quantity': 5, 'weight': 0.5, 'created_at': '2024-12-22T09:33:46.044234', 'updated_at': '2024-12-22T09:30:48.875760'}, {'id': 4, 'quantity': 5, 'weight': 0.5, 'created_at': '2024-12-22T09:32:15.600305', 'updated_at': '2024-12-22T09:30:48.875760'}, {'id': 3, 'quantity': 3, 'weight': 1.2, 'created_at': '2024-12-22T09:31:31.566731', 'updated_at': '2024-12-22T09:30:48.875760'}, {'id': 2, 'quantity': 5, 'weight': 1.5, 'created_at': '2024-12-22T09:28:53.529200', 'updated_at': '2024-12-22T06:11:15.587816'}, {'id': 1, 'quantity': 12, 'weight': 45.5, 'created_at': '2024-12-22T09:07:30.732087', 'updated_at': '2024-12-22T06:11:15.587816'}], 'notifications': []}
+2025-01-22 22:49:02.406 | INFO     | machine:_parse_websocket_message:51 - {'type': 'parameter', 'status': False, 'weight': 1.3, 'updated_at': '2025-01-22T14:49:02.362382', 'origin': 'machine'}
+2025-01-22 22:49:05.362 | INFO     | machine:_parse_websocket_message:51 - {'type': 'parameter', 'status': True, 'weight': 1.3, 'updated_at': '2025-01-22T14:49:05.326524', 'origin': 'machine'}
+2025-01-22 22:49:05.872 | INFO     | machine:send_command:108 - Sent command to arduino: 5
+2025-01-22 22:49:06.374 | INFO     | machine:send_command:108 - Sent command to arduino: 5
+2025-01-22 22:49:06.375 | INFO     | __main__:<module>:21 - Bottle detected
+2025-01-22 22:49:06.876 | INFO     | machine:send_command:108 - Sent command to arduino: 0
+2025-01-22 22:49:11.232 | INFO     | machine:send_command:108 - Sent command to arduino: 9
+2025-01-22 22:49:11.734 | INFO     | machine:send_command:108 - Sent command to arduino: 6
+2025-01-22 22:49:11.736 | INFO     | __main__:<module>:26 - Bottle scan: is_metal=False, height_passed=True
+2025-01-22 22:49:12.240 | INFO     | machine:send_command:108 - Sent command to arduino: 2
+2025-01-22 22:49:21.209 | INFO     | machine:send_command:108 - Sent command to arduino: 10
+2025-01-22 22:49:21.710 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 22:49:27.213 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 22:49:32.714 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 22:49:33.215 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 22:49:38.716 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 22:49:44.217 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 22:49:44.719 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 22:49:50.220 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 22:49:55.724 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 22:49:56.226 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 22:50:01.728 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 22:50:07.229 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 22:50:07.731 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 22:50:13.233 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 22:50:18.734 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 22:50:19.236 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 22:50:19.738 | INFO     | machine:send_command:108 - Sent command to arduino: 11
+2025-01-22 22:50:20.241 | INFO     | machine:send_command:108 - Sent command to arduino: 3
+2025-01-22 22:50:29.732 | INFO     | machine:send_command:108 - Sent command to arduino: 4
+2025-01-22 23:06:51.974 | INFO     | machine:_parse_websocket_message:51 - {'type': 'initialize', 'parameters': {'weight': 1.3, 'status': True, 'created_at': '2024-12-22T06:04:29', 'updated_at': '2025-01-22T14:49:05.326524'}, 'transactions': [{'id': 9, 'quantity': 1, 'weight': 95.7, 'created_at': '2025-01-09T05:13:33.664503', 'updated_at': '2025-01-09T05:12:39.908522'}, {'id': 8, 'quantity': 5, 'weight': 3.0, 'created_at': '2024-12-22T09:36:47.139516', 'updated_at': '2024-12-22T09:34:58.835121'}, {'id': 7, 'quantity': 5, 'weight': 2.5, 'created_at': '2024-12-22T09:36:34.128705', 'updated_at': '2024-12-22T09:34:58.835121'}, {'id': 6, 'quantity': 5, 'weight': 1.5, 'created_at': '2024-12-22T09:35:19.832237', 'updated_at': '2024-12-22T09:34:58.835121'}, {'id': 5, 'quantity': 5, 'weight': 0.5, 'created_at': '2024-12-22T09:33:46.044234', 'updated_at': '2024-12-22T09:30:48.875760'}, {'id': 4, 'quantity': 5, 'weight': 0.5, 'created_at': '2024-12-22T09:32:15.600305', 'updated_at': '2024-12-22T09:30:48.875760'}, {'id': 3, 'quantity': 3, 'weight': 1.2, 'created_at': '2024-12-22T09:31:31.566731', 'updated_at': '2024-12-22T09:30:48.875760'}, {'id': 2, 'quantity': 5, 'weight': 1.5, 'created_at': '2024-12-22T09:28:53.529200', 'updated_at': '2024-12-22T06:11:15.587816'}, {'id': 1, 'quantity': 12, 'weight': 45.5, 'created_at': '2024-12-22T09:07:30.732087', 'updated_at': '2024-12-22T06:11:15.587816'}], 'notifications': []}
+2025-01-22 23:06:53.110 | INFO     | machine:_parse_websocket_message:51 - {'type': 'parameter', 'status': False, 'weight': 1.3, 'updated_at': '2025-01-22T15:06:53.021954', 'origin': 'machine'}
+2025-01-22 23:06:55.687 | INFO     | machine:_parse_websocket_message:51 - {'type': 'parameter', 'status': True, 'weight': 1.3, 'updated_at': '2025-01-22T15:06:55.632346', 'origin': 'machine'}
+2025-01-22 23:06:56.193 | INFO     | machine:send_command:108 - Sent command to arduino: 5
+2025-01-22 23:06:56.194 | INFO     | __main__:<module>:21 - Bottle detected
+2025-01-22 23:06:56.696 | INFO     | machine:send_command:108 - Sent command to arduino: 0
+2025-01-22 23:07:00.964 | INFO     | machine:send_command:108 - Sent command to arduino: 9
+2025-01-22 23:07:01.466 | INFO     | machine:send_command:108 - Sent command to arduino: 6
+2025-01-22 23:07:01.467 | INFO     | __main__:<module>:26 - Bottle scan: is_metal=False, height_passed=True
+2025-01-22 23:07:01.968 | INFO     | machine:send_command:108 - Sent command to arduino: 2
+2025-01-22 23:07:10.827 | INFO     | machine:send_command:108 - Sent command to arduino: 10
+2025-01-22 23:07:11.328 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 23:07:14.829 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 23:07:20.330 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 23:07:20.832 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 23:07:24.334 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 23:07:29.836 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 23:07:30.338 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 23:07:33.840 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 23:07:39.341 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 23:07:39.843 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 23:07:43.345 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 23:07:48.847 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 23:07:49.350 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 23:07:52.851 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 23:07:58.352 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 23:07:58.856 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 23:08:02.357 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 23:08:07.859 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 23:08:08.362 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 23:08:11.864 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 23:08:17.365 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 23:08:17.868 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 23:08:21.369 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 23:08:26.871 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 23:08:27.374 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 23:08:30.875 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 23:08:36.378 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 23:08:36.884 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 23:08:40.386 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 23:08:45.888 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 23:08:46.392 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 23:08:49.895 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 23:08:55.396 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 23:08:55.898 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 23:08:59.400 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 23:09:04.902 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 23:09:05.406 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 23:09:08.908 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 23:09:14.409 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 23:09:14.913 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 23:09:18.414 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 23:09:23.915 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 23:09:24.417 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 23:09:27.919 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 23:09:33.421 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 23:09:33.925 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 23:09:37.426 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 23:09:42.928 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 23:09:43.430 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 23:09:46.932 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 23:09:52.434 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 23:09:52.937 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 23:09:53.438 | INFO     | machine:send_command:108 - Sent command to arduino: 11
+2025-01-22 23:09:53.939 | INFO     | machine:send_command:108 - Sent command to arduino: 3
+2025-01-22 23:10:02.156 | INFO     | machine:send_command:108 - Sent command to arduino: 4
+2025-01-22 23:10:11.654 | INFO     | machine:send_command:108 - Sent command to arduino: 5
+2025-01-22 23:10:11.655 | INFO     | __main__:<module>:21 - Bottle detected
+2025-01-22 23:10:12.156 | INFO     | machine:send_command:108 - Sent command to arduino: 0
+2025-01-22 23:10:16.426 | INFO     | machine:send_command:108 - Sent command to arduino: 9
+2025-01-22 23:10:16.930 | INFO     | machine:send_command:108 - Sent command to arduino: 6
+2025-01-22 23:10:16.931 | INFO     | __main__:<module>:26 - Bottle scan: is_metal=False, height_passed=True
+2025-01-22 23:10:17.433 | INFO     | machine:send_command:108 - Sent command to arduino: 2
+2025-01-22 23:10:26.293 | INFO     | machine:send_command:108 - Sent command to arduino: 10
+2025-01-22 23:10:26.794 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 23:10:30.295 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 23:10:35.796 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 23:10:36.298 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 23:10:39.800 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 23:10:45.302 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 23:10:45.806 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 23:10:46.308 | INFO     | machine:send_command:108 - Sent command to arduino: 11
+2025-01-22 23:10:46.811 | INFO     | machine:send_command:108 - Sent command to arduino: 3
+2025-01-22 23:10:55.029 | INFO     | machine:send_command:108 - Sent command to arduino: 4
+2025-01-22 23:11:04.527 | INFO     | machine:send_command:108 - Sent command to arduino: 5
+2025-01-22 23:11:05.028 | INFO     | machine:send_command:108 - Sent command to arduino: 5
+2025-01-22 23:11:05.530 | INFO     | machine:send_command:108 - Sent command to arduino: 5
+2025-01-22 23:11:05.531 | INFO     | __main__:<module>:21 - Bottle detected
+2025-01-22 23:11:06.033 | INFO     | machine:send_command:108 - Sent command to arduino: 0
+2025-01-22 23:11:10.303 | INFO     | machine:send_command:108 - Sent command to arduino: 9
+2025-01-22 23:11:10.804 | INFO     | machine:send_command:108 - Sent command to arduino: 6
+2025-01-22 23:11:10.804 | INFO     | __main__:<module>:26 - Bottle scan: is_metal=False, height_passed=True
+2025-01-22 23:11:11.306 | INFO     | machine:send_command:108 - Sent command to arduino: 2
+2025-01-22 23:11:20.166 | INFO     | machine:send_command:108 - Sent command to arduino: 10
+2025-01-22 23:11:20.667 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 23:11:24.168 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 23:11:29.669 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 23:11:30.170 | INFO     | machine:send_command:108 - Sent command to arduino: 12
+2025-01-22 23:11:33.672 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 23:11:39.174 | INFO     | machine:send_command:108 - Sent command to arduino: 14
+2025-01-22 23:11:39.679 | INFO     | machine:send_command:108 - Sent command to arduino: 13
+2025-01-22 23:11:40.180 | INFO     | machine:send_command:108 - Sent command to arduino: 11
+2025-01-22 23:11:40.682 | INFO     | machine:send_command:108 - Sent command to arduino: 3
+2025-01-22 23:11:48.897 | INFO     | machine:send_command:108 - Sent command to arduino: 4

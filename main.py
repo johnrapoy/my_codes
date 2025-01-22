@@ -15,13 +15,14 @@ while True:
         detected = machine.detect_bottle_ir_sensor()
         print(detected)
         if not detected:
+            print("No Bottle Detected, please insert Bottle")
             continue
 
         machine.logger.info('Bottle detected')
         machine.move_conveyor_start()
 
         is_metal = machine.detect_proximity_sensor()
-        height_passed = machine.detect_laser_sensor()
+        height_passed = machine.detect_ir_sensor()
         machine.logger.info(f'Bottle scan: is_metal={is_metal}, height_passed={height_passed}')
 
         # Reject bottle
@@ -41,10 +42,10 @@ while True:
 
         while weight < 95.7:
             machine.turn_on_pneumatic_actuator()
-            time.sleep(5) 
+            time.sleep(3) 
             
             machine.turn_off_pneumatic_actuator()
-            time.sleep(5)
+            time.sleep(3)
            
             weight = machine.get_weight()
             machine.logger.debug(f'Current weight: {weight}')
@@ -55,7 +56,7 @@ while True:
         time.sleep(5)
         # Move conveyor after capping
         machine.move_conveyor_final()
-        
+        time.sleep(5)
         processed += 1
         total_weight += weight
 

@@ -207,7 +207,7 @@ class Machine:
         response = self.get_arduino_response()
         while not response:
             response = self.get_arduino_response()
-        return bool(response) 
+        return (response == '1')
 
     def open_filling_servo(self):
         """
