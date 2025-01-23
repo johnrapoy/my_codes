@@ -27,18 +27,19 @@ while True:
             continue
 
         machine.logger.info('Bottle detected')
+        machine.lcd.text('Bottle Detected', line=1)
         machine.move_conveyor_start()
 
         is_metal = machine.detect_proximity_sensor()
         height_passed = machine.detect_ir_sensor()
+        machine.logger.info(f'Bottle scan: is_metal={is_metal}, height_passed={height_passed}')
         machine.lcd.text ('Scan Results:', line=1)
         machine.lcd.text (f'Bottle scan: is_metal={is_metal}, height_passed={height_passed}', line=2)
-        machine.logger.info(f'Bottle scan: is_metal={is_metal}, height_passed={height_passed}')
 
         # Reject bottle
         if is_metal or not height_passed:
-            machine.lcd.text('Rejecting Bottle', line=1)
             machine.logger.info('Rejecting bottle')
+            machine.lcd.text('Rejecting Bottle', line=1)
             machine.move_conveyor_reject()
             machine.close_height_servo()
             time.sleep(3)
@@ -59,14 +60,14 @@ while True:
             time.sleep(3)
            
             weight = machine.get_weight()
+            machine.logger.debug(f'Current weight: {weight}')
             machine.lcd.text(f'Current weight:', line=1)
             machine.lcd.text(f'{weight} grams', line=2)
-            machine.logger.debug(f'Current weight: {weight}')
         
         machine.turn_off_pneumatic_actuator()
         machine.close_filling_servo()
         machine.move_conveyor_end()
-        machine.lcd.text('Capping Process')
+        machine.lcd.text('Capping Process', line=1)
         time.sleep(5)
         # Move conveyor after capping
         machine.move_conveyor_final()
