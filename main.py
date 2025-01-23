@@ -11,9 +11,9 @@ while True:
     
     processed = 0
     total_weight = 0
-    machine.lcd.text('EcoBricks Maker')
+    machine.lcd.text('EcoBricks Maker', line=1)
     time.sleep(3)
-    machine.lcd.text('Starting Process')
+    machine.lcd.text('Starting Process', line=1)
     time.sleep(3)
 
     # Processing starts here
@@ -21,7 +21,8 @@ while True:
         detected = machine.detect_bottle_ir_sensor()
         print(detected)
         if not detected:
-            machine.lcd.text('No Bottle Detected, please insert Bottle')
+            machine.lcd.text('No Bottle Detected', line=1) 
+            machine.lcd.txt ('Please insert Bottle', line=2)
             print("No Bottle Detected, please insert Bottle")
             continue
 
@@ -30,11 +31,13 @@ while True:
 
         is_metal = machine.detect_proximity_sensor()
         height_passed = machine.detect_ir_sensor()
+        machine.lcd.txt ('Scan Results:', line=1)
+        machine.lcd.txt (f'Bottle scan: is_metal={is_metal}, height_passed={height_passed}', line=2)
         machine.logger.info(f'Bottle scan: is_metal={is_metal}, height_passed={height_passed}')
 
         # Reject bottle
         if is_metal or not height_passed:
-            machine.lcd.text('Rejecting bottle')
+            machine.lcd.text('Rejecting Bottle', line=1)
             machine.logger.info('Rejecting bottle')
             machine.move_conveyor_reject()
             machine.close_height_servo()
@@ -56,7 +59,8 @@ while True:
             time.sleep(3)
            
             weight = machine.get_weight()
-            machine.lcd.text('Current weight: {weight}')
+            machine.lcd.text(f'Current weight:', line=1)
+            machine.lcd.txt(f'{weight} grams', line=2)
             machine.logger.debug(f'Current weight: {weight}')
         
         machine.turn_off_pneumatic_actuator()
@@ -66,7 +70,7 @@ while True:
         time.sleep(5)
         # Move conveyor after capping
         machine.move_conveyor_final()
-        machine.lcd.text('Process Done')
+        machine.lcd.text('Process Done', line=1)
         time.sleep(5)
         processed += 1
         total_weight += weight
