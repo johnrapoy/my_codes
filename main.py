@@ -10,12 +10,15 @@ while True:
     
     processed = 0
     total_weight = 0
+    machine.lcd.text('Starting process')
+    time.sleep(3)
 
     # Processing starts here
     while True:
         detected = machine.detect_bottle_ir_sensor()
         print(detected)
         if not detected:
+            machine.lcd.text('No Bottle Detected, please insert Bottle')
             print("No Bottle Detected, please insert Bottle")
             continue
 
@@ -28,6 +31,7 @@ while True:
 
         # Reject bottle
         if is_metal or not height_passed:
+            machine.lcd.text('Rejecting bottle')
             machine.logger.info('Rejecting bottle')
             machine.move_conveyor_reject()
             machine.close_height_servo()

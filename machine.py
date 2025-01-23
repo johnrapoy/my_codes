@@ -1,5 +1,6 @@
 from loguru import logger
 from threading import Thread
+from rpi_lcd import LCD
 import json
 import serial
 import time
@@ -26,6 +27,8 @@ class Machine:
         self.ws_host = "ws://10.42.0.1:8000/ws"
         self.ws: websocket.WebSocketApp = None
         self.start_websocket_listener()
+
+        self.lcd = LCD()
 
     def start_websocket_listener(self):
         """
