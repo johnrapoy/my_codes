@@ -24,7 +24,7 @@ class Machine:
         self.available_commands = list(range(15))
 
         self.ws_host = "ws://10.42.0.1:8000/ws"
-        self.ws = None
+        self.ws: websocket.WebSocketApp = None
         self.start_websocket_listener()
 
     def start_websocket_listener(self):
@@ -64,29 +64,6 @@ class Machine:
         json_data = json.dumps(data)
         self.ws.send(json_data)
         self.state = state
-
-    def save_transaction(self, quantity: int, weight: float):
-        """
-        Save transaction to server
-        """
-        data = {
-            'quantity': quantity,
-            'weight': weight,
-        }
-        json_data = json.dumps(data)
-        self.ws.send(json_data)
-
-    def notify(self, title: str, body: str):
-        """
-        Create and notify websocket server
-        """
-        data = {
-            'category': 'transaction',
-            'title': title,
-            'body': body,
-        }
-        json_data = json.dumps(data)
-        self.ws.send(json_data)
 
     def send_command(self, command: int):
         """
@@ -242,3 +219,35 @@ class Machine:
         while not response:
             response = self.get_arduino_response()
         return float(response)
+
+    def create_transaction(self, quantity: int, weight: float):
+        """
+        Save transaction to database server
+
+        Parameters:
+        quantity (int) : Transaction quantity
+        weight (float) : Transaction weight
+        """
+        data = {
+            'type': 'add_transaction',
+            'quantity': quantity,
+            'weight': weight
+        }
+        self.ws.send(json.dumps(data))
+
+    def create_notification(self, category: str, title: str, body: str):
+        """
+        Send notification to server
+
+        Parameters:
+        category (str) : Notification category
+        title (str) : Notification title
+        body (str) : Notification body
+        """
+        data = {
+            'type': 'add_notification',
+            'category': category,
+            'title': title,
+            'body': body,
+        }
+        self.ws.send(json.dumps(data))

@@ -10,8 +10,9 @@ while True:
     
     processed = 0
     total_weight = 0
+
+    # Processing starts here
     while True:
-       
         detected = machine.detect_bottle_ir_sensor()
         print(detected)
         if not detected:
@@ -60,10 +61,20 @@ while True:
         processed += 1
         total_weight += weight
 
+        machine.create_notification(
+            'progress', 
+            'Single bottle notification', 
+            'Finished processing single bottle'
+        )
+
         # Check if state is still on
         if not machine.state:
             # Save processed
-            machine.save_transaction(processed, total_weight)
+            machine.create_transaction(processed, total_weight)
             body = f'You have processed {processed} bottles with total weight of {total_weight} grams'
-            machine.notify('Processed finished', body)
+            machine.create_notification(
+                'transaction', 
+                'Processed finished', 
+                f'You have processed {processed} bottles with total weight of {total_weight} grams'
+            )
             break
