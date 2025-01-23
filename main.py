@@ -1,6 +1,7 @@
 from machine import Machine
 import time
 
+
 machine = Machine(port='/dev/ttyACM0')
 
 while True:
@@ -10,7 +11,9 @@ while True:
     
     processed = 0
     total_weight = 0
-    machine.lcd.text('Starting process')
+    machine.lcd.text('EcoBricks Maker')
+    time.sleep(3)
+    machine.lcd.text('Starting Process')
     time.sleep(3)
 
     # Processing starts here
@@ -53,14 +56,17 @@ while True:
             time.sleep(3)
            
             weight = machine.get_weight()
+            machine.lcd.text('Current weight: {weight}')
             machine.logger.debug(f'Current weight: {weight}')
         
         machine.turn_off_pneumatic_actuator()
         machine.close_filling_servo()
         machine.move_conveyor_end()
+        machine.lcd.text('Capping Process')
         time.sleep(5)
         # Move conveyor after capping
         machine.move_conveyor_final()
+        machine.lcd.text('Process Done')
         time.sleep(5)
         processed += 1
         total_weight += weight
