@@ -155,7 +155,7 @@ class Machine:
         response = self.get_arduino_response()
         while not response:
             response = self.get_arduino_response()
-        return (response == '1')
+        return response == '1'
 
     def detect_ir_sensor(self) -> bool:
         """
@@ -187,7 +187,7 @@ class Machine:
         response = self.get_arduino_response()
         while not response:
             response = self.get_arduino_response()
-        return (response == '1')
+        return response == '1'
 
     def open_filling_servo(self):
         """
