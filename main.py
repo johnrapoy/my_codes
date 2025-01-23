@@ -22,7 +22,7 @@ while True:
         print(detected)
         if not detected:
             machine.lcd.text('No Bottle Detected', line=1) 
-            machine.lcd.txt ('Please insert Bottle', line=2)
+            machine.lcd.text ('Please insert Bottle', line=2)
             print("No Bottle Detected, please insert Bottle")
             continue
 
@@ -31,8 +31,8 @@ while True:
 
         is_metal = machine.detect_proximity_sensor()
         height_passed = machine.detect_ir_sensor()
-        machine.lcd.txt ('Scan Results:', line=1)
-        machine.lcd.txt (f'Bottle scan: is_metal={is_metal}, height_passed={height_passed}', line=2)
+        machine.lcd.text ('Scan Results:', line=1)
+        machine.lcd.text (f'Bottle scan: is_metal={is_metal}, height_passed={height_passed}', line=2)
         machine.logger.info(f'Bottle scan: is_metal={is_metal}, height_passed={height_passed}')
 
         # Reject bottle
@@ -60,7 +60,7 @@ while True:
            
             weight = machine.get_weight()
             machine.lcd.text(f'Current weight:', line=1)
-            machine.lcd.txt(f'{weight} grams', line=2)
+            machine.lcd.text(f'{weight} grams', line=2)
             machine.logger.debug(f'Current weight: {weight}')
         
         machine.turn_off_pneumatic_actuator()
